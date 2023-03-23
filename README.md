@@ -90,7 +90,7 @@ What if you also want your network to be able to handle audio, video, and other 
 
 
 # Code Demonstration
-[Demo code](demo-code.ipynb).
+[Demo code](https://colab.research.google.com/drive/1ystHo5CMFwMlwy7Ld67fYXBckfy4DXw9).
 
 # Resource Links
 1. [Paper](https://arxiv.org/abs/2107.14795)
