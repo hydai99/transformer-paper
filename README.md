@@ -30,7 +30,7 @@ What if you also want your network to be able to handle audio, video, and other 
 [Link to Video](video.mov)
 
 
-# Architecture  overview
+# Architecture  Overview
 ## Perceiver Architecture
 
 ![Perceiver Architecture](figures/perceiver_architecture.png)
@@ -83,16 +83,16 @@ What if you also want your network to be able to handle audio, video, and other 
 - It scales linearly with input and output sizes, making it easy to use in a wide range of applications and domains
 - This architecture has achieved promising results in diverse environments and has the potential to become a candidate model for universal neural network architecture.
 
-# Critical Analysis - What could have been developed further?
+# Critical Analysis: What could have been developed further?
 - Perceiver IO does not currently support sequential data, such as time series. Addressing this limitation and scaling to even larger inputs is an important direction for future work.
 - While Perceiver IO achieves strong results on a wide range of tasks, it may not always outperform task-specific architectures that are designed for a particular domain or task.
 - No solution for generative modeling and latent space size adjustment mechanism.
 
 
-# Code demonstration
+# Code Demonstration
 See [demo](demo-code.ipynb).
 
-# Resource links
+# Resource Links
 1. [Paper](https://arxiv.org/abs/2107.14795)
 2. [Perceiver: General Perception with Iterative Attention](https://arxiv.org/abs/2103.03206)
 3. [Official GitHub](https://github.com/deepmind/deepmind-research/tree/master/perceiver)
