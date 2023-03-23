@@ -7,19 +7,15 @@ What if you also want your network to be able to handle audio, video, and other 
 
 **Title: PERCEIVER IO: A GENERAL ARCHITECTURE FOR STRUCTURED INPUTS & OUTPUTS**
 
-## Introduction
-- Neural networks are revolutionizing many fields, but they have limitations
-- One of the biggest challenges is handling data from arbitrary settings
-- Perceiver IO is a general-purpose architecture that aims to solve this problem
-  
+
 ## Problem
 - Current neural network architectures are designed for specific types of data
 - Researchers struggle to handle inputs and outputs of different sizes and formats
-- This limitation makes it difficult to build sophisticated neural pipelines
+- This limitation makes it difficult to build complicated neural pipelines
 
 ## Why It's Important
 - Real-world data can be messy and unpredictable
-- Being able to handle any type of input or output is crucial for many applications
+- Being able to handle any type of input or output is important for many applications
 - Many machine learning models are built to handle single-modality problems, which are specific inputs and outputs related to a single task. This creates complexity as input and output become more diverse.
 - A single neural network model that can handle various input patterns and output tasks would simplify model development significantly
 
@@ -31,7 +27,7 @@ What if you also want your network to be able to handle audio, video, and other 
 - Perceiver IO offers a promising solution for handling general-purpose inputs and outputs, and multimodal problems without specific preprocessing of a certain mode.
 
 ## Video of Overview
-[Link to Video](等下录个5分钟左右的视频。只要overview部分)
+[Link to Video](video.mov)
 
 
 # Architecture  overview
