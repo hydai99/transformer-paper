@@ -87,7 +87,7 @@ What if you also want your network to be able to handle audio, video, and other 
 - Perceiver IO does not currently support sequential data, such as time series. Addressing this limitation and scaling to even larger inputs is an important direction for future work.
 - While Perceiver IO achieves strong results on a wide range of tasks, it may not always outperform task-specific architectures that are designed for a particular domain or task.
 - No solution for generative modeling and latent space size adjustment mechanism.
-- Model may be subject to biases in large datasets and lack robustness for domain transfer or adversarial attacks, so caution is necessary in safety-critical applications.
+
 
 # Code demonstration
 See [demo](demo-code.ipynb).
