@@ -8,8 +8,6 @@ What if you also want your network to be able to handle audio, video, and other 
 # Overview
 
 
-
-
 ## Problem
 - Current neural network architectures are designed for specific types of data
 - Researchers struggle to handle inputs and outputs of different sizes and formats
@@ -44,6 +42,12 @@ What if you also want your network to be able to handle audio, video, and other 
 - The Perceiver architecture uses cross-attention mechanisms to convert multi-modal data (byte arrays) input into a fixed-size latent space, separating network processing from input size and modality-specific details and enabling scaling to large multi-modal datasets. (Processing is cheap and doesn't depend on the input size. This makes it possible to build very deep networks even when using large inputs like images or videos.)
 - However, Perceivers have a limitation in handling complex tasks beyond simple outputs such as classification due to their small output size, therefore, it is not a truly general multi-modal model.
 
+
+## Differencce: Previous vs Perceiver IO
+- Perceiver IO overcomes the limitation of the original Perceiver which can only produce very simple outputs such as class scores. It learns to flexibly query the model’s latent space to produce outputs of arbitrary size and semantics.
+- Perceiver IO includes a mechanism to directly decode structured outputs (text, video, audio, symbol sets, etc.) from the Perceiver's latent space, allowing it to handle a wide range of new data types. 
+- The computational complexity of Perceiver IO is linear in the input and output size and the bulk of the processing occurs in the latent space, allowing us to process inputs and outputs that are much larger than can be handled by standard Transformers.
+
 ## The Perceiver IO Architecture
 
 ![Step 1](figures/architecture1.png)
@@ -71,21 +75,6 @@ What if you also want your network to be able to handle audio, video, and other 
 ![Perceiver IO on language: results on the GLUE benchmark](figures/result2.png)
 - Perceiver IO can achieve results comparable to BERT on the GLUE benchmark without requiring tokenization, and has reached state-of-the-art performance on Sintel optical flow estimation task.
 
-## Differencce: Previous vs Perceiver IO
-- Perceiver IO overcomes the limitation of the original Perceiver which can only produce very simple outputs such as class scores. It learns to flexibly query the model’s latent space to produce outputs of arbitrary size and semantics.
-- Perceiver IO includes a mechanism to directly decode structured outputs (text, video, audio, symbol sets, etc.) from the Perceiver's latent space, allowing it to handle a wide range of new data types. 
-- The computational complexity of Perceiver IO is linear in the input and output size and the bulk of the processing occurs in the latent space, allowing us to process inputs and outputs that are much larger than can be handled by standard Transformers.
-
-## Differencce: Perceiver IO vs Transformer
-- Transformer has poor scalability in terms of computation and memory. 
-  - It requires deploying attention modules throughout its entire architecture, generating queries and keys using its entire input at each layer. 
-  - This means that each layer has a quadratic time complexity in terms of computation and memory, making it impossible to train on long input data like images without pre-processing.
-
-- Perceiver IO uses attention in a non-uniform manner。
-  - This architecture has no quadratic time complexity dependency on input or output size, as the encoder and decoder attention modules are linearly dependent on input and output size, while the hidden attention is independent of input and output size. 
-  - Furthermore, this architecture requires less computation and memory and can scale to larger inputs and outputs.
-
-- While Transformer is typically used for input and output dimensions of up to a few thousand, this new model has shown good results on data with input and output dimensions in the tens of thousands.
 
 ## Conclusion
 
