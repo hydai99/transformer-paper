@@ -1,7 +1,7 @@
 # PERCEIVER IO: A GENERAL ARCHITECTURE FOR STRUCTURED INPUTS & OUTPUTS
 
 # Qustion!
-Imagine you're trying to build a neural network that can understand both text and images. How do you handle input data and select models?
+Imagine you're trying to build a neural network that can understand both text and images. How do you select models to handle input data?
 
 What if you also want your network to be able to handle audio, video, and other types of data?
 
